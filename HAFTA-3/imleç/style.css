@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    cursor: none; 
+    background-color: #222;
+    margin: 0; 
+    overflow: hidden; 
+}
+
+.custom-cursor {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+    z-index: 9999; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.cursor-flag {
+    width: 32px; 
+    height: 32px;
+    object-fit: contain; 
+    position: absolute; 
+}
+
+.cursor-border {
+    width: 60px; 
+    height: 60px;
+    border: 3px solid #fff; 
+    border-radius: 50%; 
+    position: absolute; 
+    animation: rotate 1.5s linear infinite; 
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
