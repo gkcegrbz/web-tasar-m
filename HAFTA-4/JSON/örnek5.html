@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Convert a string into a date object.</h2>
+<p id="demo"></p>
+
+<script>
+const text = '{"name":"Gökçe", "birth":"2006-09-20", "city":"Kırıkkale"}';
+const obj = JSON.parse(text);
+obj.birth = new Date(obj.birth);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+</script>
+
+</body>
+</html>
