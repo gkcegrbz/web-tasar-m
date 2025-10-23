@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRBZ SHOP - Online Alışveriş Merkezi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>GRBZ SHOP</h1>
+                        <p class="tagline">Alışverişin Yeni Adresi</p>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Ürün, kategori veya marka ara..." id="searchInput">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <a href="#" class="icon-link">
+                            <i class="fas fa-user"></i>
+                            <span>Hesabım</span>
+                        </a>
+                        <a href="#" class="icon-link">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoriler</span>
+                        </a>
+                        <a href="#" class="icon-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge">0</span>
+                            <span>Sepetim</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar-menu">
+            <div class="menu-header">
+                <i class="fas fa-bars"></i>
+                <span>Kategoriler</span>
+            </div>
+            <nav class="category-menu" id="categoryMenu">
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <section class="slider-section">
+                <div class="main-slider">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1200" alt="Büyük İndirimler">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1607083206203-821b1f96c7f7?w=1200" alt="Yeni Sezon">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?w=1200" alt="Özel İndirimler">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.pexels.com/photos/3905872/pexels-photo-3905872.jpeg?w=1200" alt="Kampanyalar">
+                        </div>
+                    </div>
+                    <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="thumbnail-slider">
+                    <button class="thumb-scroll-btn left" onclick="scrollThumbnails(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="thumbnails-container" id="thumbnailsContainer">
+                        <div class="thumbnail active" onclick="goToSlide(0)">
+                            <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=200" alt="Slide 1">
+                        </div>
+                        <div class="thumbnail" onclick="goToSlide(1)">
+                            <img src="https://images.unsplash.com/photo-1607083206203-821b1f96c7f7?w=200" alt="Slide 2">
+                        </div>
+                        <div class="thumbnail" onclick="goToSlide(2)">
+                            <img src="https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?w=200" alt="Slide 3">
+                        </div>
+                        <div class="thumbnail" onclick="goToSlide(3)">
+                            <img src="https://images.pexels.com/photos/3905872/pexels-photo-3905872.jpeg?w=200" alt="Slide 4">
+                        </div>
+                        <div class="thumbnail" onclick="goToSlide(0)">
+                            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=200" alt="Slide 5">
+                        </div>
+                        <div class="thumbnail" onclick="goToSlide(1)">
+                            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=200" alt="Slide 6">
+                        </div>
+                    </div>
+                    <button class="thumb-scroll-btn right" onclick="scrollThumbnails(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+            <section class="leaf-navigation">
+                <div class="leaf-tabs">
+                    <div class="leaf-tab active" data-tab="bestsellers" onclick="switchTab('bestsellers')">
+                        <i class="fas fa-fire"></i>
+                        <span>Çok Satanlar</span>
+                    </div>
+                    <div class="leaf-tab" data-tab="new" onclick="switchTab('new')">
+                        <i class="fas fa-star"></i>
+                        <span>Yeni Eklenenler</span>
+                    </div>
+                    <div class="leaf-tab" data-tab="favorites" onclick="switchTab('favorites')">
+                        <i class="fas fa-heart"></i>
+                        <span>Beğenilenler</span>
+                    </div>
+                    <div class="leaf-tab" data-tab="discounts" onclick="switchTab('discounts')">
+                        <i class="fas fa-percent"></i>
+                        <span>İndirimdekiler</span>
+                    </div>
+                    <div class="leaf-tab" data-tab="limited" onclick="switchTab('limited')">
+                        <i class="fas fa-clock"></i>
+                        <span>Sınırlı Stok</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products-section">
+                <div class="section-header">
+                    <h2 id="sectionTitle">Çok Satanlar</h2>
+                    <select class="sort-dropdown">
+                        <option>Tüm Kategoriler</option>
+                        <option>Fiyat: Düşükten Yükseğe</option>
+                        <option>Fiyat: Yüksekten Düşüğe</option>
+                        <option>En Yeniler</option>
+                        <option>En Çok Satanlar</option>
+                    </select>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRBZ SHOP Hakkında</h3>
+                    <p>Türkiye'nin en güvenilir online alışveriş platformu. Binlerce ürün, güvenli ödeme, hızlı kargo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Müşteri Hizmetleri</h3>
+                    <ul>
+                        <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                        <li><a href="#">Sipariş Takibi</a></li>
+                        <li><a href="#">İade ve Değişim</a></li>
+                        <li><a href="#">Kargo Bilgileri</a></li>
+                        <li><a href="#">Güvenli Alışveriş</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>İletişim Bilgileri</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> 0850 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@grbzshop.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kırıkkale, Türkiye</li>
+                        <li><i class="fas fa-clock"></i> Hafta içi 09:00 - 18:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>İstek ve Önerileriniz</h3>
+                    <form class="suggestion-form" onsubmit="submitSuggestion(event)">
+                        <input type="text" placeholder="Adınız" required>
+                        <input type="email" placeholder="E-posta" required>
+                        <textarea placeholder="Mesajınız" rows="3" required></textarea>
+                        <button type="submit" class="submit-btn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GRBZ SHOP. Tüm hakları saklıdır.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
